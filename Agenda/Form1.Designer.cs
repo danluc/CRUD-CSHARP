@@ -34,12 +34,12 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.mskTefone = new System.Windows.Forms.MaskedTextBox();
             this.mskCelula = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgDados = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,13 +92,14 @@
             this.mskCelula.Size = new System.Drawing.Size(82, 20);
             this.mskCelula.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgDados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(278, 134);
-            this.dataGridView1.TabIndex = 6;
+            this.dgDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDados.Location = new System.Drawing.Point(13, 221);
+            this.dgDados.Name = "dgDados";
+            this.dgDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgDados.Size = new System.Drawing.Size(278, 134);
+            this.dgDados.TabIndex = 6;
             // 
             // btnSalvar
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgDados);
             this.Controls.Add(this.mskCelula);
             this.Controls.Add(this.mskTefone);
             this.Controls.Add(this.txtNome);
@@ -155,7 +156,7 @@
             this.Name = "Form1";
             this.Text = "Agenda";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +170,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.MaskedTextBox mskTefone;
         private System.Windows.Forms.MaskedTextBox mskCelula;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgDados;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;

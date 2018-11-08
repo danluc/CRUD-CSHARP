@@ -17,6 +17,7 @@ namespace Agenda
         public Form1()
         {
             InitializeComponent();
+            Listar();
         }
 
         private void Salvar(Contato contato)
@@ -25,10 +26,16 @@ namespace Agenda
             contato.Nome        = txtNome.Text;
             contato.Telefone    = mskTefone.Text;
             contato.Celular     = mskCelula.Text;
-
             c.Salvar(contato);
             MessageBox.Show("CONTATO SALVO.");
+            Listar();
 
+        }
+
+        private void Listar()
+        {
+            ContatoController c = new ContatoController();
+            dgDados.DataSource = c.listar();
         }
 
         private void Form1_Load(object sender, EventArgs e)

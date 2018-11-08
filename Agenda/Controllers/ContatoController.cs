@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Data;
 using Agenda.Models;
 
 namespace Agenda.Controllers
 {
     class ContatoController
     {
+        Contato contato = new Contato();
         /** Salvar */
         public void Salvar(Contato c)
         {
@@ -17,6 +19,14 @@ namespace Agenda.Controllers
                 throw e;
             }
             
+        }
+
+        /** Listar */
+        public DataTable listar()
+        {
+            DataTable dt = new DataTable();
+            dt = contato.listar();
+            return dt;
         }
     }
 }

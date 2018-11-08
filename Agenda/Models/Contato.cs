@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using MySql.Data.MySqlClient;
 
 namespace Agenda.Models
@@ -30,6 +31,25 @@ namespace Agenda.Models
             finally
             {
                 closeDB();
+            }
+        }
+
+        /** Listar Contatos */
+        public DataTable listar()
+        {
+            try
+            {
+                openDB();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                comando = new MySqlCommand("SELECT * FROM contatos ORDER BY nome", conexao);
+                da.SelectCommand = comando;
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
 
