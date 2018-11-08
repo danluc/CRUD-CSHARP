@@ -18,7 +18,6 @@ namespace Agenda.Controllers
             {
                 throw e;
             }
-            
         }
         /** Listar */
         public DataTable Listar()
@@ -38,7 +37,6 @@ namespace Agenda.Controllers
             {
                 throw e;
             }
-
         }
         /** Excluir */
         public void Excluir(Contato c)
@@ -51,7 +49,6 @@ namespace Agenda.Controllers
             {
                 throw e;
             }
-
         }
     }
 }

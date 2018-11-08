@@ -41,6 +41,7 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             // dgDados
             // 
             this.dgDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDados.Location = new System.Drawing.Point(13, 221);
+            this.dgDados.Location = new System.Drawing.Point(13, 216);
             this.dgDados.Name = "dgDados";
             this.dgDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDados.Size = new System.Drawing.Size(278, 134);
@@ -160,11 +161,21 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 353);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(254, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "*Clique duas vezes no contato para Editar ou Excluir";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 367);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtCode);
@@ -202,6 +213,7 @@
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -31,43 +31,69 @@ namespace Agenda
         private void Salvar(Contato contato)
         {
             ContatoController c = new ContatoController();
-            contato.Nome        = txtNome.Text;
-            contato.Telefone    = mskTelefone.Text;
-            contato.Celular     = mskCelula.Text;
-            c.Salvar(contato);
-            MessageBox.Show("CONTATO SALVO.");
-            Listar();
-            LimparCampos();
-
+            if (txtNome.Text.Trim() == string.Empty || txtNome.Text.Trim() == string.Empty || txtNome.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Todos os campos são obrigatórios", "Alerta");
+            }else
+            {
+                contato.Nome = txtNome.Text;
+                contato.Telefone = mskTelefone.Text;
+                contato.Celular = mskCelula.Text;
+                c.Salvar(contato);
+                MessageBox.Show("CONTATO SALVO.");
+                Listar();
+                LimparCampos();
+                btnSalvar.Enabled = true;
+            }
         }
 
         private void Listar()
         {
             ContatoController c = new ContatoController();
             dgDados.DataSource = c.Listar();
+            dgDados.Columns[0].HeaderText = "Cod";
+            dgDados.Columns[1].HeaderText = "Nome";
+            dgDados.Columns[2].HeaderText = "Telefone";
+            dgDados.Columns[3].HeaderText = "Celular";
         }
 
         private void Editar(Contato contato)
         {
             ContatoController c = new ContatoController();
-            contato.Id          = Convert.ToInt32(txtCode.Text);
-            contato.Nome        = txtNome.Text;
-            contato.Telefone    = mskTelefone.Text;
-            contato.Celular     = mskCelula.Text;
-            c.Editar(contato);
-            MessageBox.Show("CONTATO SALVO.");
-            Listar();
-            LimparCampos();
+            if (txtNome.Text.Trim() == string.Empty || txtNome.Text.Trim() == string.Empty || txtNome.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Todos os campos são obrigatórios", "Alerta");
+            }
+            else
+            {
+                contato.Id = Convert.ToInt32(txtCode.Text);
+                contato.Nome = txtNome.Text;
+                contato.Telefone = mskTelefone.Text;
+                contato.Celular = mskCelula.Text;
+                c.Editar(contato);
+                MessageBox.Show("CONTATO SALVO.");
+                Listar();
+                LimparCampos();
+                btnSalvar.Enabled = true;
+            }
         }
 
         private void Excluir(Contato contato)
         {
             ContatoController c = new ContatoController();
-            contato.Id = Convert.ToInt32(txtCode.Text);
-            c.Excluir(contato);
-            MessageBox.Show("CONTATO DELETADO.");
-            Listar();
-            LimparCampos();
+            if (txtCode.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Contato não encontrado", "Alerta");
+            }
+            else
+            {
+                contato.Id = Convert.ToInt32(txtCode.Text);
+                c.Excluir(contato);
+                MessageBox.Show("CONTATO DELETADO.");
+                Listar();
+                LimparCampos();
+                btnSalvar.Enabled = true;
+            }
 
         }
 
@@ -88,6 +114,7 @@ namespace Agenda
             txtNome.Text        = dgDados.CurrentRow.Cells[1].Value.ToString();
             mskTelefone.Text    = dgDados.CurrentRow.Cells[2].Value.ToString();
             mskCelula.Text      = dgDados.CurrentRow.Cells[3].Value.ToString();
+            btnSalvar.Enabled   = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
