@@ -20,13 +20,25 @@ namespace Agenda.Controllers
             }
             
         }
-
         /** Listar */
-        public DataTable listar()
+        public DataTable Listar()
         {
             DataTable dt = new DataTable();
             dt = contato.listar();
             return dt;
+        }
+        /** Editar */
+        public void Editar(Contato c)
+        {
+            try
+            {
+                c.editar(c);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
     }
 }

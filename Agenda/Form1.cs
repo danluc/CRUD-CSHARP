@@ -24,7 +24,7 @@ namespace Agenda
         {
             ContatoController c = new ContatoController();
             contato.Nome        = txtNome.Text;
-            contato.Telefone    = mskTefone.Text;
+            contato.Telefone    = mskTelefone.Text;
             contato.Celular     = mskCelula.Text;
             c.Salvar(contato);
             MessageBox.Show("CONTATO SALVO.");
@@ -35,7 +35,20 @@ namespace Agenda
         private void Listar()
         {
             ContatoController c = new ContatoController();
-            dgDados.DataSource = c.listar();
+            dgDados.DataSource = c.Listar();
+        }
+
+        private void Editar(Contato contato)
+        {
+            ContatoController c = new ContatoController();
+            contato.Id          = Convert.ToInt32(txtCode.Text);
+            contato.Nome        = txtNome.Text;
+            contato.Telefone    = mskTelefone.Text;
+            contato.Celular     = mskCelula.Text;
+            c.Editar(contato);
+            MessageBox.Show("CONTATO SALVO.");
+            Listar();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,6 +60,20 @@ namespace Agenda
         {
             Contato contato = new Contato();
             Salvar(contato);
+        }
+
+        private void dgDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCode.Text        = dgDados.CurrentRow.Cells[0].Value.ToString();
+            txtNome.Text        = dgDados.CurrentRow.Cells[1].Value.ToString();
+            mskTelefone.Text    = dgDados.CurrentRow.Cells[2].Value.ToString();
+            mskCelula.Text      = dgDados.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Contato contato = new Contato();
+            Editar(contato);
         }
     }
 }

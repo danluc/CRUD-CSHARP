@@ -6,6 +6,7 @@ namespace Agenda.Models
 {
     class Contato : DB
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Celular { get; set; }
@@ -50,6 +51,33 @@ namespace Agenda.Models
             catch (Exception e)
             {
                 throw e;
+            }
+            finally
+            {
+                closeDB();
+            }
+        }
+
+        /** Metodo Editar */
+        public void editar(Contato contato)
+        {
+            try
+            {
+                openDB();
+                comando = new MySqlCommand("UPDATE contatos SET nome = @nome, telefone = @telefone, celular = @celular WHERE id = @id", conexao);
+                comando.Parameters.AddWithValue("@id", contato.Id);
+                comando.Parameters.AddWithValue("@nome", contato.Nome);
+                comando.Parameters.AddWithValue("@telefone", contato.Telefone);
+                comando.Parameters.AddWithValue("@celular", contato.Celular);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                closeDB();
             }
         }
 

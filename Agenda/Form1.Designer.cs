@@ -32,13 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.mskTefone = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.mskCelula = new System.Windows.Forms.MaskedTextBox();
             this.dgDados = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +75,15 @@
             this.txtNome.Location = new System.Drawing.Point(73, 66);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(218, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
-            // mskTefone
+            // mskTelefone
             // 
-            this.mskTefone.Location = new System.Drawing.Point(73, 95);
-            this.mskTefone.Mask = "(00) 0000-0000";
-            this.mskTefone.Name = "mskTefone";
-            this.mskTefone.Size = new System.Drawing.Size(82, 20);
-            this.mskTefone.TabIndex = 4;
+            this.mskTelefone.Location = new System.Drawing.Point(73, 95);
+            this.mskTelefone.Mask = "(00) 0000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(82, 20);
+            this.mskTelefone.TabIndex = 2;
             // 
             // mskCelula
             // 
@@ -90,7 +91,7 @@
             this.mskCelula.Mask = "(00) 0000-0000";
             this.mskCelula.Name = "mskCelula";
             this.mskCelula.Size = new System.Drawing.Size(82, 20);
-            this.mskCelula.TabIndex = 5;
+            this.mskCelula.TabIndex = 3;
             // 
             // dgDados
             // 
@@ -99,14 +100,15 @@
             this.dgDados.Name = "dgDados";
             this.dgDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDados.Size = new System.Drawing.Size(278, 134);
-            this.dgDados.TabIndex = 6;
+            this.dgDados.TabIndex = 4;
+            this.dgDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDados_CellDoubleClick);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(13, 146);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -130,25 +132,36 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Cod:";
             // 
-            // textBox1
+            // txtCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtCode.Location = new System.Drawing.Point(73, 39);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(100, 20);
+            this.txtCode.TabIndex = 0;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(97, 146);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 367);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dgDados);
             this.Controls.Add(this.mskCelula);
-            this.Controls.Add(this.mskTefone);
+            this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -168,13 +181,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.MaskedTextBox mskTefone;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.MaskedTextBox mskCelula;
         private System.Windows.Forms.DataGridView dgDados;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
 
