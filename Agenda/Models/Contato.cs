@@ -81,5 +81,25 @@ namespace Agenda.Models
             }
         }
 
+        /** Metodo Excluir */
+        public void excluir(Contato contato)
+        {
+            try
+            {
+                openDB();
+                comando = new MySqlCommand("DELETE FROM contatos WHERE id = @id", conexao);
+                comando.Parameters.AddWithValue("@id", contato.Id);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                closeDB();
+            }
+        }
+
     }
 }

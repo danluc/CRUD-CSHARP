@@ -20,6 +20,14 @@ namespace Agenda
             Listar();
         }
 
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtCode.Clear();
+            mskTelefone.Clear();
+            mskCelula.Clear();
+        }
+
         private void Salvar(Contato contato)
         {
             ContatoController c = new ContatoController();
@@ -29,6 +37,7 @@ namespace Agenda
             c.Salvar(contato);
             MessageBox.Show("CONTATO SALVO.");
             Listar();
+            LimparCampos();
 
         }
 
@@ -48,6 +57,17 @@ namespace Agenda
             c.Editar(contato);
             MessageBox.Show("CONTATO SALVO.");
             Listar();
+            LimparCampos();
+        }
+
+        private void Excluir(Contato contato)
+        {
+            ContatoController c = new ContatoController();
+            contato.Id = Convert.ToInt32(txtCode.Text);
+            c.Excluir(contato);
+            MessageBox.Show("CONTATO DELETADO.");
+            Listar();
+            LimparCampos();
 
         }
 
@@ -74,6 +94,12 @@ namespace Agenda
         {
             Contato contato = new Contato();
             Editar(contato);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Contato contato = new Contato();
+            Excluir(contato);
         }
     }
 }

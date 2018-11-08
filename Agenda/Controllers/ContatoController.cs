@@ -40,5 +40,18 @@ namespace Agenda.Controllers
             }
 
         }
+        /** Excluir */
+        public void Excluir(Contato c)
+        {
+            try
+            {
+                c.excluir(c);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }
